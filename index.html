@@ -2,13 +2,12 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Iza Faroza | Web Developer & Pembina Pramuka</title>
     <link rel="icon" href="https://img.icons8.com/ios-filled/50/6C63FF/programming.png">
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    
     
     <style>
         /* Welcome Screen Styles */
@@ -285,25 +284,509 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
-        /* Responsive untuk Tentang Saya */
-        @media (max-width: 992px) {
-            .about-content {
-                grid-template-columns: 1fr;
+        /* ============ RESPONSIVE STYLES ============ */
+
+        /* Tablet (768px - 1024px) */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 15px;
             }
             
-            .about-cards {
+            .hero-info h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content {
                 grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .project-card {
+                flex-direction: column;
+            }
+            
+            .project-info, .project-imgbox {
+                width: 100%;
+            }
+            
+            .social-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .skills-box {
+                flex-direction: column;
+            }
+            
+            .contact-section {
+                flex-direction: column;
+            }
+            
+            .contact-box, .social-box {
+                width: 100%;
             }
         }
 
+        /* Mobile (576px - 768px) */
         @media (max-width: 768px) {
+            /* Welcome Screen */
+            .welcome-logo {
+                font-size: 3rem;
+            }
+            
+            .welcome-title {
+                font-size: 2rem;
+            }
+            
+            .welcome-subtitle {
+                font-size: 1rem;
+                padding: 0 20px;
+            }
+            
+            .enter-btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+            
+            /* Header */
+            header {
+                padding: 15px 20px;
+                flex-wrap: wrap;
+            }
+            
+            .left h2 {
+                font-size: 1.2rem;
+            }
+            
+            header ul {
+                display: none;
+            }
+            
+            .box-icons {
+                display: none;
+            }
+            
+            .menu-icon {
+                display: block !important;
+            }
+            
+            /* Hero Section */
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 20px;
+                min-height: auto;
+            }
+            
+            .hero-info {
+                width: 100%;
+                margin-bottom: 40px;
+                padding: 20px;
+            }
+            
+            .hero-info h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            
+            .hero-info-title {
+                font-size: 1rem;
+                padding: 8px 16px;
+            }
+            
             .hero-buttons {
                 flex-direction: column;
+                align-items: center;
+                gap: 15px;
             }
             
             .hero-buttons button {
                 width: 100%;
+                max-width: 300px;
+                margin-bottom: 0;
                 justify-content: center;
+            }
+            
+            .skills-video-box {
+                width: 100%;
+                height: 300px;
+            }
+            
+            /* About Section */
+            .about-text {
+                padding: 25px;
+            }
+            
+            .about-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .about-text p {
+                font-size: 1rem;
+            }
+            
+            .about-stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+            
+            .stat-item {
+                padding: 15px;
+            }
+            
+            .stat-number {
+                font-size: 1.5rem;
+            }
+            
+            /* Projects Section */
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+            
+            .project-card {
+                flex-direction: column;
+                margin-bottom: 40px;
+                padding: 20px;
+            }
+            
+            .project-imgbox img {
+                height: 200px;
+            }
+            
+            .project-info h1 {
+                font-size: 1.5rem;
+            }
+            
+            .project-info p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            
+            /* Skills Section */
+            .skills-section {
+                padding: 40px 20px;
+            }
+            
+            .Designer, .coder {
+                padding: 20px;
+            }
+            
+            .Designer h1, .coder h1 {
+                font-size: 1.3rem;
+            }
+            
+            .slider {
+                transform: scale(0.8);
+            }
+            
+            /* Social Media Section */
+            .social-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .social-card {
+                padding: 20px;
+            }
+            
+            /* Contact Section */
+            .contact-section {
+                padding: 40px 20px;
+                flex-direction: column;
+            }
+            
+            .social-box, .contact-box {
+                width: 100%;
+                padding: 25px;
+                margin-bottom: 30px;
+            }
+            
+            .contact-box input {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+            
+            .input-message {
+                height: 100px;
+            }
+            
+            /* Footer */
+            .footer {
+                padding: 20px;
+                text-align: center;
+                flex-direction: column;
+            }
+            
+            .footer h1 {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Small Mobile (0px - 576px) */
+        @media (max-width: 576px) {
+            /* Welcome Screen */
+            .welcome-logo {
+                font-size: 2.5rem;
+            }
+            
+            .welcome-title {
+                font-size: 1.5rem;
+            }
+            
+            .loading-bar {
+                width: 150px;
+            }
+            
+            /* Header */
+            .left h2 {
+                font-size: 1rem;
+            }
+            
+            .left img {
+                width: 30px;
+                height: 30px;
+            }
+            
+            /* Hero Section */
+            .hero-info h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-info p {
+                font-size: 0.9rem;
+            }
+            
+            /* About Section */
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-right-column {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .portrait-card, .location-card {
+                width: 100%;
+            }
+            
+            .portrait-img {
+                height: 200px;
+            }
+            
+            /* Projects */
+            .project-info h1 {
+                font-size: 1.2rem;
+            }
+            
+            .hover-sign {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+                top: 10px;
+                left: 10px;
+            }
+            
+            /* Skills */
+            .skills-image {
+                width: 200px;
+                height: auto;
+            }
+            
+            .slider {
+                --width: 70px;
+                --height: 70px;
+                transform: scale(0.7);
+            }
+            
+            .slider .item i {
+                font-size: 3rem !important;
+            }
+            
+            /* Social Media */
+            .social-handle {
+                font-size: 0.9rem;
+            }
+            
+            /* Contact Form */
+            .contact-box p {
+                font-size: 0.9rem;
+            }
+            
+            button {
+                padding: 12px 20px;
+                font-size: 0.9rem;
+            }
+            
+            /* Sidebar */
+            .sidebar {
+                width: 100%;
+                padding: 40px 20px;
+            }
+            
+            .sidebar ul li {
+                margin-bottom: 20px;
+            }
+            
+            .sidebar ul li a {
+                font-size: 1.2rem;
+            }
+            
+            .social-sidebar {
+                margin-top: 30px;
+            }
+            
+            .blackhole-box {
+                width: 150px;
+                height: 150px;
+                top: -75px;
+            }
+            
+            .scroll-down {
+                bottom: 20px;
+            }
+        }
+
+        /* Landscape Mode */
+        @media (max-height: 600px) and (orientation: landscape) {
+            #welcome-screen {
+                padding: 20px;
+            }
+            
+            .welcome-logo {
+                font-size: 3rem;
+                margin-bottom: 10px;
+            }
+            
+            .welcome-title {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                min-height: auto;
+                padding: 40px 20px;
+            }
+            
+            .section-title {
+                margin: 30px 0;
+            }
+        }
+
+        /* High-resolution screens */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Fix untuk iOS Safari */
+        @supports (-webkit-touch-callout: none) {
+            .hero {
+                min-height: -webkit-fill-available;
+            }
+            
+            input, textarea {
+                font-size: 16px !important; /* Mencegah zoom di iOS */
+            }
+        }
+
+        /* Touch-friendly elements */
+        @media (hover: none) {
+            .hero-buttons button,
+            .project-card button,
+            .social-card,
+            .about-card {
+                cursor: pointer;
+            }
+            
+            .hero-buttons button:active,
+            .project-card button:active {
+                transform: scale(0.98);
+            }
+            
+            /* Hilangkan hover effects di mobile */
+            .project-imgbox:hover img {
+                transform: scale(1);
+            }
+            
+            .social-card:hover {
+                transform: none;
+            }
+            
+            .about-card:hover {
+                transform: none;
+                border-color: rgba(255, 255, 255, 0.1);
+                box-shadow: none;
+            }
+        }
+
+        /* Font size adjustments for readability */
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.2rem;
+            }
+            
+            p, li, a {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* Improve touch targets for mobile */
+        @media (max-width: 768px) {
+            a, button, input[type="submit"] {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            .hero-buttons button {
+                padding: 15px 20px;
+            }
+            
+            .box-icons a {
+                width: 44px;
+                height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .menu-icon, .close-icon {
+                width: 44px;
+                height: 44px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        /* Smooth transitions for mobile */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Optimize images for mobile */
+        @media (max-width: 768px) {
+            img, video {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            .back-vid {
+                object-fit: cover;
             }
         }
     </style>
@@ -719,13 +1202,15 @@
             
             // Disable scrolling during welcome screen
             document.body.style.overflow = 'hidden';
-        });
-
-        // Initialize AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
+            
+            // Initialize AOS with mobile-friendly settings
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 50,
+                disable: window.innerWidth < 768 ? true : false,
+                startEvent: 'DOMContentLoaded'
+            });
         });
 
         // Mobile Menu Toggle
@@ -748,7 +1233,7 @@
             });
         });
 
-        // Smooth scrolling for anchor links
+        // Smooth scrolling for anchor links with mobile offset
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -756,25 +1241,13 @@
                 if (targetId === '#') return;
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
+                    // Adjust offset for mobile
+                    const offset = window.innerWidth < 768 ? 60 : 80;
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - offset,
                         behavior: 'smooth'
                     });
                 }
-            });
-        });
-
-        // Update JavaScript untuk gambar project
-        const projectImages = document.querySelectorAll('.project-imgbox');
-        projectImages.forEach(imgBox => {
-            imgBox.addEventListener('mouseenter', () => {
-                const img = imgBox.querySelector('img');
-                img.style.transform = 'scale(1.05)';
-            });
-            
-            imgBox.addEventListener('mouseleave', () => {
-                const img = imgBox.querySelector('img');
-                img.style.transform = 'scale(1)';
             });
         });
 
@@ -822,74 +1295,100 @@
             observer.observe(el);
         });
 
-        // Skills slider animation
+        // Skills slider animation - disable on mobile
         const slider = document.querySelector('.slider .list');
-        if (slider) {
+        if (slider && window.innerWidth > 768) {
             slider.style.animation = 'slide 20s linear infinite';
         }
 
-        // Add hover effect to project images
-        projectImages.forEach(imgBox => {
-            imgBox.addEventListener('mouseenter', () => {
-                imgBox.style.transform = 'translateY(-10px)';
-                imgBox.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.4)';
-                imgBox.style.transition = 'all 0.3s ease';
+        // Mobile touch optimizations
+        if (window.innerWidth < 768) {
+            // Remove hover effects on mobile
+            const hoverElements = document.querySelectorAll('.project-imgbox, .social-card, .about-card');
+            hoverElements.forEach(el => {
+                el.style.transition = 'none';
             });
             
-            imgBox.addEventListener('mouseleave', () => {
-                imgBox.style.transform = 'translateY(0)';
-                imgBox.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
+            // Make buttons more touch-friendly
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                button.style.cursor = 'pointer';
+            });
+            
+            // Optimize video playback for mobile
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+                video.setAttribute('playsinline', '');
+                video.setAttribute('muted', '');
+                video.setAttribute('autoplay', '');
+                video.setAttribute('loop', '');
+            });
+        }
+
+        // Handle orientation change
+        window.addEventListener('orientationchange', function() {
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 100);
+        });
+
+        // Prevent zoom on double-tap (iOS)
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function(event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // Handle mobile keyboard
+        const inputs = document.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                // Scroll to input when keyboard appears
+                setTimeout(() => {
+                    this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 300);
             });
         });
 
-        // Social media card hover effects
-        const socialCards = document.querySelectorAll('.social-card');
-        socialCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-10px)';
-                card.style.transition = 'all 0.3s ease';
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-            });
-        });
-
-        // Animate social media counters
-        const socialFollowers = document.querySelectorAll('.social-followers');
-        socialFollowers.forEach(follower => {
-            const text = follower.textContent;
-            const numberMatch = text.match(/\d+/);
-            if (numberMatch) {
-                const target = parseInt(numberMatch[0]);
-                let current = 0;
-                const increment = target / 30;
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        current = target;
-                        clearInterval(timer);
-                    }
-                    follower.textContent = text.replace(/\d+/, Math.floor(current));
-                }, 50);
+        // Load AOS animations only when needed (performance optimization)
+        window.addEventListener('load', function() {
+            if (window.innerWidth > 768) {
+                AOS.refresh();
             }
         });
 
-        // About card hover effects
-        const aboutCards = document.querySelectorAll('.about-card');
-        aboutCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-10px)';
-                card.style.borderColor = '#6C63FF';
-                card.style.boxShadow = '0 15px 30px rgba(108, 99, 255, 0.2)';
+        // Social media card hover effects - only on desktop
+        if (window.innerWidth > 768) {
+            const socialCards = document.querySelectorAll('.social-card');
+            socialCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px)';
+                    card.style.transition = 'all 0.3s ease';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+        }
+
+        // Optimize performance on mobile
+        if (window.innerWidth < 768) {
+            // Reduce animation complexity on mobile
+            document.querySelectorAll('[data-aos]').forEach(el => {
+                el.removeAttribute('data-aos');
+                el.removeAttribute('data-aos-delay');
             });
             
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-                card.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                card.style.boxShadow = 'none';
+            // Optimize images
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.loading = 'lazy';
             });
-        });
+        }
     </script>
 </body>
 </html>
