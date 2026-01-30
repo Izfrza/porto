@@ -1674,438 +1674,327 @@ header ul a:hover{
 
 /* ========== RESPONSIF MOBILE TANPA MERUSAK DESKTOP ========== */
 
-/* Untuk HP (max 768px) */
-@media screen and (max-width: 768px) {
-    /* Global mobile fixes */
-    body {
+/* ============================================
+   RESPONSIVE MOBILE PORTRAIT OPTIMIZATION
+   ============================================ */
+
+@media screen and (max-width: 768px) and (orientation: portrait) {
+    /* Reset container untuk mobile portrait */
+    .container {
+        gap: 50px;
         overflow-x: hidden;
     }
     
-    .container {
-        gap: 60px;
-        padding: 0 15px;
-    }
-    
-    /* Header Mobile */
+    /* Header mobile optimization */
     header {
-        position: fixed !important;
-        padding: 10px 15px !important;
-        height: 60px !important;
-        background: rgba(0, 0, 20, 0.95) !important;
-        backdrop-filter: blur(10px);
+        padding: 0 15px;
+        height: 60px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
     }
     
-    header .left h2 {
-        font-size: 1.3rem !important;
+    .left {
+        scale: 0.85;
+        margin-left: -10px;
     }
     
-    header .left img {
-        width: 35px !important;
-        height: 35px !important;
-        margin: 0 10px 0 0 !important;
+    .left h2 {
+        font-size: 18px;
     }
     
-    header ul {
-        display: none !important;
-    }
-    
-    .box-icons {
-        display: none !important;
-    }
-    
-    .menu-icon {
-        display: block !important;
-        font-size: 28px;
-        cursor: pointer;
-    }
-    
-    /* Blackhole di tengah mobile */
-    .blackhole-box {
-        position: absolute !important;
-        width: 180px !important;
-        height: 180px !important;
-        top: 70px !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        right: auto !important;
-    }
-    
-    .blackhole-box video {
-        width: 100% !important;
-        height: 100% !important;
-        margin-top: 0 !important;
-        object-fit: cover;
-    }
-    
-    /* Hero Section Mobile */
+    /* Hero section mobile portrait */
     .hero {
-        flex-direction: column !important;
-        height: auto !important;
+        height: auto;
         min-height: 100vh;
-        padding-top: 80px !important;
-        text-align: center;
-        justify-content: center;
+        padding-top: 70px;
+        flex-direction: column;
+        justify-content: flex-start;
     }
     
     .hero-info {
-        position: relative !important;
-        left: 0 !important;
-        width: 100% !important;
-        text-align: center;
-        padding: 20px 15px;
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(5px);
-        border-radius: 15px;
-        margin-top: 20px;
-    }
-    
-    .hero-info-title {
-        margin: 0 auto 15px !important;
-        justify-content: center;
-        width: fit-content !important;
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 90%;
+        margin: 0 auto;
+        padding: 20px;
     }
     
     .hero-info h1 {
-        font-size: 2.2rem !important;
-        line-height: 1.3;
-        max-width: 100% !important;
-        margin: 15px 0 !important;
+        font-size: 32px;
+        line-height: 38px;
+        max-width: 100%;
+        text-align: center;
+        margin: 20px 0;
+    }
+    
+    .hero-info-title {
+        width: auto;
+        font-size: 14px;
+        text-align: center;
+        margin: 0 auto;
     }
     
     .hero-info p {
-        font-size: 1rem !important;
-        line-height: 1.6;
-        max-width: 100% !important;
-        margin: 15px 0 25px !important;
+        max-width: 100%;
+        font-size: 16px;
+        text-align: center;
+        line-height: 24px;
+        margin: 20px 0;
     }
     
     .hero-buttons {
         flex-direction: column;
         gap: 15px;
-        margin: 20px auto 0 !important;
+        margin: 30px auto;
         width: 100%;
-        max-width: 300px;
+        align-items: center;
     }
     
     .hero-buttons button {
-        width: 100% !important;
-        justify-content: center;
-        padding: 14px 20px !important;
+        width: 90%;
+        max-width: 300px;
+        padding: 15px;
+        font-size: 14px;
     }
     
+    /* Hide video on mobile portrait */
     .skills-video-box {
-        position: relative !important;
-        right: 0 !important;
-        width: 100%;
-        margin: 30px auto 0;
-        order: -1;
+        display: none;
     }
     
-    .skills-video {
-        height: 250px !important;
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-        border-radius: 15px;
+    .blackhole-box video {
+        margin-top: -15%;
+        width: 150%;
+        transform: translateX(-16%);
     }
     
     .scroll-down {
-        position: relative !important;
-        left: 0 !important;
-        margin: 30px auto 0;
-        bottom: 0 !important;
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 30px;
+        z-index: 100;
     }
     
-    /* About Section Mobile */
-    .info-section {
-        width: 100% !important;
-        margin-top: 40px !important;
-    }
-    
-    .section-title {
-        font-size: 2rem !important;
-        text-align: center !important;
-        margin-bottom: 30px !important;
-    }
-    
+    /* About section mobile portrait */
     .about-container {
-        padding: 0 !important;
+        padding: 0 15px;
     }
     
     .about-content {
-        grid-template-columns: 1fr !important;
+        display: flex;
+        flex-direction: column;
         gap: 30px;
     }
     
     .about-text {
-        padding: 25px 20px !important;
-        width: 100% !important;
-        text-align: center;
+        padding: 20px;
+        border-radius: 15px;
     }
     
     .about-text h1 {
-        font-size: 1.8rem !important;
-        text-align: center !important;
+        font-size: 1.8rem;
+        text-align: center;
     }
     
     .about-text p {
-        font-size: 1rem !important;
-        text-align: center !important;
+        font-size: 1rem;
+        text-align: center;
     }
     
     .about-stats {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 15px;
-        margin-top: 25px !important;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin-top: 20px;
     }
     
     .stat-item {
-        padding: 15px 10px !important;
-        text-align: center;
+        padding: 15px 10px;
     }
     
     .stat-number {
-        font-size: 1.5rem !important;
+        font-size: 1.5rem;
     }
     
-    .stat-label {
-        font-size: 0.9rem !important;
-    }
-    
-    .about-right-column {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        align-items: center;
-    }
-    
-    .portrait-card {
-        width: 100% !important;
-        max-width: 350px !important;
-        margin: 0 auto;
-    }
-    
+    /* Portrait card mobile optimization */
     .portrait-frame {
-        height: 250px !important;
+        height: 250px;
     }
     
-    .location-card {
-        width: 100% !important;
-        max-width: 350px !important;
-        margin: 0 auto;
+    .portrait-img {
+        object-fit: cover;
+    }
+    
+    .portrait-details {
+        padding: 15px;
         text-align: center;
-        padding: 25px !important;
     }
     
-    .mini-globe-container {
-        width: 120px !important;
-        height: 120px !important;
-        margin: 15px auto !important;
+    .portrait-details p {
+        justify-content: center;
     }
     
-    /* Projects Section Mobile */
+    /* Projects section mobile portrait */
     .my-project {
-        width: 100% !important;
-        height: auto !important;
-        margin-top: 40px !important;
-        margin-bottom: 40px !important;
+        width: 95%;
+        margin: 50px 0;
+        height: auto;
     }
     
     .project-card {
-        flex-direction: column !important;
-        width: 100% !important;
-        height: auto !important;
-        margin-bottom: 50px !important;
-        gap: 25px;
+        flex-direction: column;
+        height: auto;
+        margin: 40px 0;
+        gap: 20px;
+        padding: 15px;
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 15px;
     }
     
     .project-imgbox {
-        width: 100% !important;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-    
-    .project-imgbox img {
-        height: 200px !important;
+        width: 100%;
+        min-width: unset;
+        margin: 0;
     }
     
     .project-info {
-        width: 100% !important;
-        max-width: 400px;
-        padding-left: 0 !important;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        align-items: center;
         text-align: center;
-        margin: 0 auto;
     }
     
     .project-info h1 {
-        font-size: 1.5rem !important;
-        width: 100% !important;
-        text-align: center !important;
-        margin: 0 0 15px 0 !important;
+        font-size: 1.4rem;
+        width: 100%;
+        text-wrap: wrap;
+        max-width: 100%;
     }
     
     .project-info p {
-        width: 100% !important;
-        max-width: 100% !important;
-        font-size: 1rem !important;
-        text-align: center !important;
-        margin: 0 0 20px 0 !important;
+        font-size: 14px;
+        width: 100%;
+        max-width: 100%;
+        min-width: unset;
+        margin: 15px 0;
     }
     
-    .project-info button {
-        margin: 0 auto !important;
-    }
-    
-    /* Skills Section Mobile */
+    /* Skills section mobile portrait */
     .skills-section {
-        width: 100% !important;
+        padding: 0 15px;
     }
     
     .skills-box {
-        flex-direction: column !important;
-        height: auto !important;
-        text-align: center;
-        padding: 20px 0;
+        height: auto;
+        min-height: 500px;
+        flex-direction: column;
+        align-items: center;
+        margin: 30px 0;
     }
     
     .skills-image {
-        width: 80% !important;
-        max-width: 300px !important;
-        margin: 0 auto 30px !important;
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto;
     }
     
-    .Designer {
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        width: 100% !important;
-        max-width: 400px;
-        margin: 0 auto 30px !important;
-        padding: 20px;
-        text-align: center;
-    }
-    
-    .coder {
-        position: relative !important;
-        top: auto !important;
-        right: auto !important;
-        width: 100% !important;
-        max-width: 400px;
-        margin: 0 auto 30px !important;
-        padding: 20px;
+    .Designer, .coder {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        max-width: 100%;
+        margin: 20px 0;
         text-align: center;
     }
     
     .Designer h1, .coder h1 {
-        font-size: 1.5rem !important;
-        justify-content: center !important;
-        text-align: center !important;
-    }
-    
-    .Designer p, .coder p {
-        text-align: center !important;
-        font-size: 1rem !important;
+        font-size: 1.5rem;
+        justify-content: center;
     }
     
     .slider {
-        position: relative !important;
-        width: 90% !important;
-        margin: 30px auto 0 !important;
-        bottom: auto !important;
-        right: auto !important;
+        position: relative;
+        bottom: auto;
+        right: auto;
+        width: 90%;
+        margin: 30px auto;
     }
     
-    /* Social Section Mobile */
-    .social-section {
-        padding: 40px 0 !important;
-        margin-top: 30px !important;
-    }
-    
+    /* Social media section mobile portrait */
     .social-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+        grid-template-columns: repeat(2, 1fr);
         gap: 15px;
-        max-width: 400px;
-        margin: 30px auto 0 !important;
+        padding: 0 15px;
     }
     
     .social-card {
-        padding: 20px 15px !important;
-        min-height: 170px;
+        min-height: 180px;
+        padding: 20px;
     }
     
-    .social-icon i {
-        font-size: 2.2rem !important;
+    .social-icon {
+        font-size: 2rem;
     }
     
     .social-name {
-        font-size: 1.1rem !important;
+        font-size: 1rem;
     }
     
     .social-handle {
-        font-size: 0.85rem !important;
+        font-size: 0.8rem;
     }
     
-    /* Contact Section Mobile */
+    /* Contact section mobile portrait */
     .contact-section {
-        flex-direction: column !important;
-        height: auto !important;
-        padding: 40px 0 !important;
-        gap: 30px;
+        flex-direction: column;
+        height: auto;
+        padding: 50px 15px;
+        gap: 40px;
     }
     
-    .social-box {
-        width: 100% !important;
-        max-width: 400px;
-        margin: 0 auto !important;
-        padding: 25px 20px !important;
+    .contact-section h1 {
+        position: relative;
+        top: auto;
+        left: auto;
+        text-align: center;
+        margin-bottom: 30px;
     }
     
-    .contact-box {
-        width: 100% !important;
-        max-width: 400px;
-        margin: 0 auto !important;
-        padding: 25px 20px !important;
-    }
-    
-    .contact-box p {
-        text-align: center !important;
+    .social-box, .contact-box {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
     }
     
     .contact-box input {
-        width: 100% !important;
-        padding: 12px 15px !important;
-        font-size: 16px !important;
+        width: 90%;
     }
     
-    .contact-box button {
-        width: 100% !important;
-        max-width: 200px;
-        margin: 20px auto 0 !important;
-        display: block;
-    }
-    
-    /* Footer Mobile */
+    /* Footer mobile portrait */
     .footer {
-        flex-direction: column !important;
-        height: auto !important;
-        padding: 25px 15px !important;
-        text-align: center;
+        flex-direction: column;
+        height: auto;
+        padding: 20px 15px;
         gap: 20px;
-        position: relative !important;
+        text-align: center;
     }
     
     .footer h1 {
-        font-size: 0.9rem !important;
-        margin: 0 !important;
+        max-width: 100%;
+        font-size: 14px;
         order: 2;
     }
     
     .footer .box-icons {
-        display: flex !important;
-        gap: 15px;
-        justify-content: center;
-        margin-top: 0 !important;
         order: 1;
+        justify-content: center;
+        gap: 15px;
     }
     
     .footer .box-icons a {
@@ -2114,204 +2003,206 @@ header ul a:hover{
         font-size: 1.2rem;
     }
     
-    /* Sidebar Mobile */
+    /* Welcome screen mobile portrait */
+    #welcome-screen {
+        padding: 20px;
+    }
+    
+    .welcome-logo {
+        font-size: 3.5rem;
+    }
+    
+    .welcome-title {
+        font-size: 2.5rem;
+        text-align: center;
+    }
+    
+    .welcome-subtitle {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+    
+    .enter-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    /* Sidebar mobile portrait */
     .sidebar {
-        width: 280px !important;
-        max-width: 280px;
+        width: 100% !important;
+        border-radius: 0 !important;
+    }
+    
+    .sidebar ul {
+        padding-left: 30px;
+    }
+    
+    .sidebar ul li {
+        margin-bottom: 25px;
     }
     
     .sidebar ul li a {
-        font-size: 1.2rem !important;
-    }
-    
-    .social-sidebar {
-        justify-content: center !important;
-        gap: 20px;
-    }
-    
-    /* Disable heavy animations on mobile */
-    .autoBlur,
-    .autoDisplay,
-    .fadein-left {
-        animation: none !important;
-        opacity: 1 !important;
-    }
-    
-    [data-aos] {
-        opacity: 1 !important;
-        transform: none !important;
-    }
-}
-
-/* Untuk HP sangat kecil (max 480px) */
-@media screen and (max-width: 480px) {
-    /* Blackhole lebih kecil */
-    .blackhole-box {
-        width: 150px !important;
-        height: 150px !important;
-    }
-    
-    /* Header lebih kompak */
-    header {
-        padding: 8px 12px !important;
-        height: 55px !important;
-    }
-    
-    header .left h2 {
-        font-size: 1.1rem !important;
-    }
-    
-    .menu-icon {
         font-size: 24px;
     }
     
-    /* Hero lebih kecil */
+    .social-sidebar {
+        justify-content: center;
+        gap: 25px;
+        padding-left: 0;
+        margin-top: 40px;
+    }
+}
+
+/* Extra small devices (phones < 480px) portrait */
+@media screen and (max-width: 480px) and (orientation: portrait) {
     .hero-info h1 {
-        font-size: 1.8rem !important;
+        font-size: 28px;
+        line-height: 32px;
     }
     
     .hero-info p {
-        font-size: 0.95rem !important;
+        font-size: 14px;
     }
     
-    .skills-video {
-        height: 200px !important;
+    .section-title {
+        font-size: 24px;
+        text-align: center;
     }
     
-    /* About adjustments */
-    .about-text h1 {
-        font-size: 1.6rem !important;
+    .social-grid {
+        grid-template-columns: 1fr;
     }
     
-    .about-stats {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 10px;
-    }
-    
-    .stat-item {
-        padding: 12px 8px !important;
-    }
-    
-    .stat-number {
-        font-size: 1.3rem !important;
-    }
-    
-    .stat-label {
-        font-size: 0.8rem !important;
-    }
-    
-    /* Projects adjustments */
-    .project-imgbox img {
-        height: 180px !important;
+    .project-card {
+        padding: 10px;
     }
     
     .project-info h1 {
-        font-size: 1.3rem !important;
+        font-size: 1.2rem;
     }
     
-    /* Social grid 1 kolom untuk HP kecil */
+    .project-info p {
+        font-size: 13px;
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .stat-item {
+        padding: 10px 5px;
+    }
+    
+    .stat-number {
+        font-size: 1.3rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
+    }
+    
+    /* Fix horizontal scrolling */
+    body {
+        overflow-x: hidden;
+    }
+    
+    .container {
+        overflow-x: hidden;
+    }
+    
+    * {
+        max-width: 100vw;
+    }
+}
+
+/* Landscape mode adjustments for tablets */
+@media screen and (min-width: 769px) and (max-width: 1024px) and (orientation: portrait) {
+    .container {
+        gap: 70px;
+    }
+    
+    .hero-info h1 {
+        font-size: 40px;
+        line-height: 46px;
+    }
+    
+    .hero-info p {
+        font-size: 18px;
+    }
+    
     .social-grid {
-        grid-template-columns: 1fr !important;
-        max-width: 300px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Fix for very small screens */
+@media screen and (max-width: 360px) and (orientation: portrait) {
+    .hero-info h1 {
+        font-size: 24px;
+        line-height: 28px;
+    }
+    
+    .hero-buttons button {
+        width: 95%;
+        padding: 12px;
+        font-size: 13px;
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    
+    .stat-number {
+        font-size: 1.1rem;
+    }
+    
+    .stat-label {
+        font-size: 0.65rem;
     }
     
     .social-card {
         min-height: 160px;
-        padding: 20px !important;
-    }
-    
-    /* Skills slider kecil */
-    .slider {
-        --width: 60px !important;
-        --height: 60px !important;
-    }
-    
-    .slider .item i {
-        font-size: 2.5rem !important;
-    }
-    
-    /* Footer adjustments */
-    .footer {
-        padding: 20px 15px !important;
-    }
-    
-    .footer .box-icons a {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
+        padding: 15px;
     }
 }
 
-/* Landscape mode mobile */
-@media (max-height: 600px) and (max-width: 900px) {
-    .hero {
-        min-height: auto;
-        padding: 60px 0 30px !important;
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .hero-buttons button,
+    .project-info button,
+    .contact-box button,
+    .contact-mini-btn {
+        min-height: 48px; /* Minimum touch target size */
     }
     
-    .hero-info h1 {
-        font-size: 1.6rem !important;
-    }
-    
-    .skills-video {
-        height: 180px !important;
-    }
-    
-    .blackhole-box {
-        top: 60px !important;
-        width: 140px !important;
-        height: 140px !important;
-    }
-}
-
-/* Tablet (769px - 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
-    /* Tetap pertahankan layout desktop untuk tablet */
-    .blackhole-box {
-        top: 0 !important;
-        left: 0 !important;
-        transform: none !important;
-        width: 100% !important;
-    }
-    
-    .blackhole-box video {
-        margin-top: -20% !important;
-        width: 100% !important;
-    }
-    
-    .hero-info h1 {
-        font-size: 2.5rem !important;
-        max-width: 400px !important;
-    }
-    
-    .skills-video {
-        height: 500px !important;
-    }
-}
-
-/* Touch-friendly untuk mobile */
-@media (max-width: 768px) {
-    button, 
-    .social-card,
-    a[href] {
+    .social-card {
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
-        min-height: 44px;
-        min-width: 44px;
     }
     
-    /* Smooth scrolling dengan offset untuk header fixed */
-    html {
-        scroll-behavior: smooth;
-        scroll-padding-top: 70px;
+    /* Remove hover effects for touch devices */
+    .social-card:hover {
+        transform: none;
     }
     
-    section {
-        scroll-margin-top: 70px;
+    .social-card:active {
+        transform: scale(0.98);
     }
     
-    /* Input yang lebih besar untuk mobile */
-    input, textarea {
-        font-size: 16px !important;
+    .project-imgbox:hover img {
+        transform: none;
+    }
+}
+
+/* Dark mode optimization for mobile */
+@media (prefers-color-scheme: dark) {
+    .social-card {
+        background: rgba(0, 0, 0, 0.3);
+    }
+    
+    .about-text,
+    .about-card {
+        background: rgba(0, 0, 0, 0.25);
     }
 }
