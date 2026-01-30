@@ -1666,7 +1666,444 @@ header ul a:hover{
 }
 
 
+/* Tambahkan di akhir file style.css sebelum penutup */
 
+/* Mobile Responsive Improvements */
+@media screen and (max-width: 768px) {
+    /* Hero Section Mobile */
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 100px;
+        flex-direction: column;
+    }
+    
+    .hero-info {
+        position: relative;
+        left: 0;
+        padding: 0 20px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    .hero-info h1 {
+        font-size: 32px;
+        line-height: 1.3;
+        margin: 20px 0;
+        max-width: 100%;
+    }
+    
+    .hero-info p {
+        font-size: 16px;
+        max-width: 100%;
+        line-height: 1.6;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-buttons button {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    /* Skills Video Box Mobile */
+    .skills-video-box {
+        position: relative;
+        right: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    
+    .skills-video {
+        height: 300px;
+        width: auto;
+    }
+    
+    /* About Section Mobile */
+    .about-content {
+        padding: 0 15px;
+    }
+    
+    .about-text h1 {
+        font-size: 28px;
+    }
+    
+    .about-text p {
+        font-size: 16px;
+    }
+    
+    .about-right-column {
+        margin-top: 30px;
+    }
+    
+    .portrait-frame {
+        height: 250px;
+    }
+    
+    /* Projects Section Mobile */
+    .my-project {
+        margin-top: 50px;
+        margin-bottom: 100px;
+        height: auto;
+    }
+    
+    .project-card {
+        flex-direction: column;
+        margin-bottom: 60px;
+        height: auto;
+        gap: 30px;
+    }
+    
+    .project-imgbox {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .project-info {
+        width: 100%;
+        padding-left: 0;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .project-info h1 {
+        font-size: 24px;
+        text-wrap: wrap;
+        max-width: 100%;
+    }
+    
+    .project-info p {
+        max-width: 100%;
+        min-width: auto;
+        font-size: 16px;
+    }
+    
+    /* Social Section Mobile */
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 15px;
+    }
+    
+    .social-card {
+        min-height: 180px;
+        padding: 20px 15px;
+    }
+    
+    .social-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .social-name {
+        font-size: 1.1rem;
+    }
+    
+    .social-handle {
+        font-size: 0.8rem;
+    }
+    
+    /* Skills Section Mobile */
+    .skills-section {
+        padding: 0 20px;
+    }
+    
+    .skills-box {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+    }
+    
+    .skills-image {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 40px;
+    }
+    
+    .Designer, .coder {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        max-width: 100%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    
+    .Designer h1, .coder h1 {
+        font-size: 24px;
+        justify-content: center;
+    }
+    
+    .slider {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 30px;
+    }
+    
+    /* Contact Section Mobile */
+    .contact-section {
+        flex-direction: column;
+        height: auto;
+        padding: 60px 20px;
+        gap: 40px;
+    }
+    
+    .contact-section h1 {
+        position: relative;
+        top: 0;
+        left: 0;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    .social-box, .contact-box {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .contact-box input {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    /* Footer Mobile */
+    .footer {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .footer h1 {
+        font-size: 14px;
+        order: 2;
+    }
+    
+    .footer .box-icons {
+        order: 1;
+        justify-content: center;
+    }
+    
+    /* Welcome Screen Mobile */
+    .welcome-title {
+        font-size: 2.5rem;
+        text-align: center;
+        padding: 0 20px;
+    }
+    
+    .welcome-subtitle {
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+    
+    .enter-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    .welcome-logo {
+        font-size: 3.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Extra small devices */
+    header {
+        padding: 0 15px;
+        height: 60px;
+    }
+    
+    .left h2 {
+        font-size: 18px;
+    }
+    
+    .left img {
+        width: 30px;
+        margin: 0 10px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+        text-align: center;
+        padding: 0 20px;
+    }
+    
+    /* Hero Section */
+    .hero-info h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+    
+    .hero-info-title {
+        width: auto;
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    
+    /* About Section */
+    .about-text {
+        padding: 25px;
+    }
+    
+    .about-text h1 {
+        font-size: 24px;
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .stat-item {
+        padding: 15px;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    /* Projects Section */
+    .project-imgbox img {
+        height: 200px;
+    }
+    
+    .hover-sign {
+        top: 10px;
+        left: 10px;
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    
+    /* Social Grid - Single Column */
+    .social-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+    
+    .social-card {
+        min-height: 160px;
+        padding: 15px;
+    }
+    
+    /* Skills Slider */
+    .slider {
+        --width: 80px;
+        --height: 80px;
+    }
+    
+    .slider .list .item i {
+        font-size: 3rem !important;
+    }
+    
+    /* Contact Form */
+    .contact-box p {
+        font-size: 14px;
+    }
+    
+    .contact-box input {
+        font-size: 14px;
+    }
+    
+    /* Scroll Down Button */
+    .scroll-down {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20px;
+    }
+    
+    /* Hide blackhole video on very small screens */
+    .blackhole-box {
+        display: none;
+    }
+    
+    /* Menu Icon Adjustment */
+    .menu-icon {
+        font-size: 30px;
+    }
+}
+
+/* Fix for horizontal scrolling on mobile */
+@media screen and (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    .container {
+        overflow-x: hidden;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    /* Remove hover effects for touch devices */
+    .hero-buttons button:hover,
+    .project-info button:hover,
+    .contact-box button:hover,
+    .social-card:hover,
+    .about-card:hover {
+        transform: none !important;
+    }
+    
+    /* Increase touch targets */
+    header ul a,
+    .hero-buttons button,
+    .project-info button,
+    .contact-box button,
+    .social-card,
+    .about-card {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .box-icons a,
+    .social-sidebar a {
+        padding: 10px;
+    }
+}
+
+/* Landscape mode fixes */
+@media screen and (max-height: 600px) and (orientation: landscape) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 50px;
+    }
+    
+    .hero-info h1 {
+        font-size: 24px;
+        margin: 15px 0;
+    }
+    
+    .hero-info p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .skills-video {
+        height: 200px;
+    }
+}
+
+/* Fix for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+    .hero {
+        min-height: -webkit-fill-available;
+    }
+}
 
 
 
