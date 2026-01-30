@@ -1666,115 +1666,362 @@ header ul a:hover{
 }
 
 
-/* --- RESPONSIVE MOBILE (Max-width: 768px) --- */
-/* --- RESPONSIVE MOBILE OPTIMIZED --- */
+/* --- GLOBAL STYLES --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: lightgray;
+    overflow-x: hidden; /* Mencegah scroll ke samping */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    background-color: #001f7c38;
+}
+
+.back-vid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    mix-blend-mode: overlay;
+}
+
+/* --- HEADER & NAVIGATION --- */
+header {
+    display: flex;
+    position: fixed; /* Ubah ke fixed agar selalu ikut saat scroll */
+    top: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px #72a1dea2;
+    z-index: 1000;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.left img {
+    width: 40px;
+    margin: 0 15px;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+header ul li a:hover {
+    color: #6C63FF;
+}
+
+.box-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.box-icons i {
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.box-icons i:hover {
+    color: #6C63FF;
+}
+
+.menu-icon {
+    display: none; /* Default sembunyi di desktop */
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 50px;
+}
+
+.hero-info {
+    max-width: 600px;
+}
+
+.hero-info h1 {
+    font-size: 50px;
+    line-height: 60px;
+    margin-bottom: 20px;
+}
+
+.skills-video-box {
+    position: relative;
+}
+
+.skills-video {
+    height: 500px;
+    border-radius: 30px;
+}
+
+/* --- ABOUT SECTION --- */
+.info-section {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* --- PROJECTS SECTION --- */
+.my-project {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.project-card {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    overflow: hidden;
+    height: 400px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-vidbox {
+    flex: 1;
+    min-width: 50%;
+}
+
+.project-vidbox video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- SKILLS SECTION (THE TRICKY PART) --- */
+.skills-box {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.skills-image {
+    width: 400px;
+    z-index: 2;
+}
+
+.Designer {
+    position: absolute;
+    left: 10%;
+}
+
+.coder {
+    position: absolute;
+    right: 10%;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Sembunyi */
+    width: 300px;
+    height: 100%;
+    background: #0f0c29;
+    z-index: 2000;
+    transition: 0.5s;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.open-sidebar {
+    right: 0 !important;
+}
+
+.close-sidebar {
+    right: -300px !important;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* =============================================
+   RESPONSIVE MOBILE (PENGATURAN SIMETRIS)
+   ============================================= */
+
 @media screen and (max-width: 768px) {
     
-    /* 1. Perbaikan Container Skills agar Simetris */
-    .skills-box {
-        display: flex;
-        flex-direction: column; /* Tumpuk vertikal */
-        align-items: center;    /* Ratakan di tengah */
-        justify-content: center;
-        height: auto;           /* Biar tinggi mengikuti konten */
-        padding: 60px 20px;
-        gap: 40px;              /* Jarak antar elemen */
+    /* Global Reset */
+    .container {
+        gap: 60px;
+    }
+
+    header ul, .box-icons {
+        display: none; /* Sembunyikan menu desktop */
+    }
+
+    .menu-icon {
+        display: block; /* Tampilkan Hamburger */
+    }
+
+    /* Hero Responsive */
+    .hero {
+        flex-direction: column;
+        height: auto;
+        padding: 120px 20px 50px 20px;
         text-align: center;
     }
 
-    /* Reset posisi elemen Designer & Coder */
-    .Designer, .coder {
-        position: static;       /* Hapus posisi melayang */
-        transform: none !important; /* Hapus geseran manual */
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto;
-        padding: 0;
+    .hero-info h1 {
+        font-size: 32px;
+        line-height: 40px;
     }
 
-    /* Gambar robot/pusat agar di tengah */
-    .skills-image {
-        position: static;
-        width: 250px;           /* Ukuran gambar diatur agar pas */
+    .skills-video {
+        height: 300px;
+        margin-top: 30px;
+    }
+
+    /* SKILLS SECTION - FIX SIMETRIS */
+    .skills-box {
+        flex-direction: column; /* Berderet ke bawah */
         height: auto;
-        margin: 0 auto;
-        order: -1;              /* (Opsional) pindahkan gambar ke paling atas jika ingin */
+        padding: 40px 20px;
+        gap: 40px;
     }
 
-    /* Rapikan List Skill agar lurus tengah tapi teks rata kiri sedikit */
+    .skills-image {
+        position: static !important;
+        transform: none !important;
+        width: 80% !important;
+        max-width: 250px;
+        order: 1; /* Gambar di paling atas atau tengah */
+    }
+
+    .Designer, .coder {
+        position: static !important; /* Hapus absolute */
+        transform: none !important;  /* Hapus translate */
+        width: 100% !important;
+        text-align: center;          /* Judul di tengah */
+        order: 2;
+    }
+
     .Designer ul, .coder ul {
-        display: inline-block;
-        text-align: left;
-        padding-left: 0;
-        list-style: none;
+        display: inline-block;       /* Agar list bisa diketengahkan */
+        text-align: left;            /* Isi list tetap rata kiri agar rapi */
+        padding: 0;
+        margin: 10px auto;
     }
 
     .Designer ul li, .coder ul li {
-        margin-bottom: 10px;
-        font-size: 0.95rem;
+        list-style: none;
+        margin-bottom: 8px;
     }
 
-    /* 2. Perbaikan Section Project agar simetris */
+    /* PROJECT SECTION - FIX SIMETRIS */
     .my-project {
         width: 90%;
-        height: auto;
-        margin: 50px auto;
     }
 
     .project-card {
-        flex-direction: column;
+        flex-direction: column;      /* Tumpuk video dan teks */
         height: auto;
-        padding: 20px;
-        align-items: center;
         text-align: center;
-        gap: 20px;
-        border-radius: 20px;
     }
 
     .project-vidbox {
         width: 100%;
-        min-width: unset;
-    }
-
-    .project-vidbox video {
-        width: 100%;
-        border-radius: 15px;
+        height: 250px;
     }
 
     .project-info {
-        width: 100%;
-        padding: 0;
+        padding: 30px 20px;
     }
 
-    /* 3. Section Hero & Welcome */
-    .hero-info {
-        left: 0;
+    /* ABOUT SECTION - FIX SIMETRIS */
+    .about-content {
+        grid-template-columns: 1fr; /* Jadi 1 kolom */
+    }
+
+    .about-text {
         text-align: center;
-        padding: 0 15px;
     }
 
-    .hero-info h1 {
-        font-size: 2rem;
-        line-height: 1.2;
-    }
-
-    /* Sembunyikan Navigasi Desktop */
-    header ul, .box-icons {
-        display: none;
-    }
-
-    .menu-icon {
-        display: block;
+    /* Footer / Mini Globe */
+    .mini-globe-container {
+        width: 120px;
+        height: 120px;
     }
 }
 
-/* Penyesuaian untuk layar sangat kecil */
+/* Handphone Sangat Kecil */
 @media screen and (max-width: 480px) {
-    .skills-image {
-        width: 180px;
+    .hero-info h1 {
+        font-size: 26px;
     }
-    
-    .Designer h1, .coder h1 {
-        font-size: 22px;
+
+    .skills-image {
+        width: 200px !important;
     }
 }
