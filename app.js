@@ -34,3 +34,60 @@ closeIcon.addEventListener("click", function(){
     sideBar.classList.add("close-sidebar");
     
 })
+// Mobile detection and optimization
+function isMobileDevice() {
+    return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+function isPortraitOrientation() {
+    return window.innerHeight > window.innerWidth;
+}
+
+// Initialize mobile optimizations
+document.addEventListener('DOMContentLoaded', function() {
+    if (isMobileDevice()) {
+        // Disable video autoplay on mobile for better performance
+        const videos = document.querySelectorAll('video');
+        videos.forEach(video => {
+            video.removeAttribute('autoplay');
+            video.setAttribute('preload', 'none');
+        });
+        
+        // Optimize sidebar for touch
+        const sidebarLinks = document.querySelectorAll('.sidebar a');
+        sidebarLinks.forEach(link => {
+            link.style.padding = '12px 0';
+            link.style.minHeight = '44px'; // Minimum touch target
+        });
+        
+        // Add touch feedback for buttons
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.addEventListener('touchstart', function() {
+                this.style.opacity = '0.7';
+            });
+            button.addEventListener('touchend', function() {
+                this.style.opacity = '1';
+            });
+        });
+    }
+    
+    // Handle orientation changes
+    window.addEventListener('orientationchange', function() {
+        setTimeout(() => {
+            if (isPortraitOrientation()) {
+                // Portrait-specific adjustments
+                document.body.classList.add('portrait-mode');
+                document.body.classList.remove('landscape-mode');
+            } else {
+                // Landscape-specific adjustments
+                document.body.classList.add('landscape-mode');
+                document.body.classList.remove('portrait-mode');
+            }
+            // Trigger AOS refresh for proper animations
+            if (typeof AOS !== 'undefined') {
+                AOS.refresh();
+            }
+        }, 300);
+    });
+});
