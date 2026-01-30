@@ -1820,3 +1820,57 @@ header ul a:hover{
         gap: 10px;
     }
 }
+/* --- PERBAIKAN KHUSUS SECTION SKILLS MOBILE --- */
+@media screen and (max-width: 768px) {
+    
+    .skills-box {
+        display: flex;
+        flex-direction: column; /* Tumpuk ke bawah */
+        height: auto;
+        padding: 50px 10px;
+        align-items: center;
+        gap: 30px;
+    }
+
+    /* Reset posisi absolut biar tidak berantakan */
+    .Designer, .coder {
+        position: static; /* Menghilangkan top/left/right absolut */
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+        margin: 0 auto;
+        transform: none !important; /* Mematikan efek geser manual */
+    }
+
+    .skills-image {
+        width: 80%;
+        max-width: 300px;
+        height: auto;
+        position: static;
+        margin: 20px 0;
+    }
+
+    /* Memperbaiki list di dalam skill */
+    .Designer ul, .coder ul {
+        display: inline-block;
+        text-align: left;
+        padding: 0;
+    }
+
+    .Designer h1, .coder h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    /* Perbaikan Visual Project agar tidak kepotong */
+    .project-card {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .project-vidbox video {
+        width: 100%;
+        height: auto;
+    }
+}
