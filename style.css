@@ -1874,3 +1874,1380 @@ header ul a:hover{
         height: auto;
     }
 }
+/* ==================== SERTIFIKAT SECTION (VERSI MINIMALIS) ==================== */
+.certificates-section {
+    padding: 60px 0;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.certificates-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 30px;
+}
+
+/* Variabel untuk kartu sertifikat minimalis */
+:root {
+    --certificate-cards: 4;
+    --certificate-height: 550px; /* Tinggi lebih proporsional */
+    --certificate-width: 900px; /* Lebar fixed untuk persegi panjang */
+    --certificate-top-padding: 0.8em;
+    --certificate-margin: 25px;
+}
+
+#certificate-cards {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(var(--certificate-cards), var(--certificate-height));
+    gap: var(--certificate-margin);
+    padding-bottom: calc(var(--certificate-cards) * var(--certificate-top-padding));
+    margin-bottom: var(--certificate-margin);
+    justify-items: center; /* Pusatkan semua kartu */
+}
+
+#certificate1 { --certificate-index: 1; }
+#certificate2 { --certificate-index: 2; }
+#certificate3 { --certificate-index: 3; }
+#certificate4 { --certificate-index: 4; }
+
+.certificate-card {
+    position: sticky;
+    top: 100px; /* Jarak dari atas saat sticky */
+    padding-top: calc(var(--certificate-index) * var(--certificate-top-padding));
+    width: var(--certificate-width);
+    display: flex;
+    justify-content: center;
+}
+
+.certificate-body {
+    box-sizing: border-box;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+    height: var(--certificate-height);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    background-color: #000000; /* Warna hitam solid */
+    border: 3px solid rgba(108, 99, 255, 0.3);
+    position: relative;
+}
+
+.certificate-body:hover {
+    border-color: #6C63FF;
+    box-shadow: 0 20px 50px rgba(108, 99, 255, 0.4);
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* Konten Sertifikat - Versi MINIMALIS */
+.certificate-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    position: relative;
+}
+
+/* Hanya gambar sertifikat (diperbesar) */
+.certificate-image {
+    width: 100%;
+    height: 85%; /* Gambar mengambil 85% tinggi card */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+}
+
+.certificate-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Pastikan seluruh gambar terlihat */
+    border-radius: 15px;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-color: rgba(0, 0, 0, 0.2); /* Background untuk gambar transparan */
+}
+
+.certificate-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Overlay efek pada gambar */
+.certificate-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.1) 50%,
+        rgba(0, 0, 0, 0.2) 100%
+    );
+    border-radius: 15px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Hanya judul di bawah gambar (diperbesar) */
+.certificate-title {
+    width: 100%;
+    text-align: center;
+    padding: 15px 10px;
+    margin-top: 15px;
+    position: relative;
+    z-index: 2;
+}
+
+.certificate-title h2 {
+    font-size: 2rem; /* Judul diperbesar */
+    margin: 0;
+    color: #fff;
+    background: linear-gradient(90deg, #6C63FF, #FF6584);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Badge kecil untuk tanggal */
+.certificate-date {
+    display: inline-block;
+    background: rgba(108, 99, 255, 0.15);
+    color: #6C63FF;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 8px;
+    border: 1px solid rgba(108, 99, 255, 0.3);
+}
+
+/* Efek cahaya di sudut card */
+.certificate-body::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        #6C63FF 0%, 
+        #FF6584 25%, 
+        #6C63FF 50%, 
+        #FF6584 75%, 
+        #6C63FF 100%);
+    border-radius: 27px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.certificate-body:hover::before {
+    opacity: 0.3;
+    animation: borderGlow 3s linear infinite;
+}
+
+@keyframes borderGlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Indikator nomor sertifikat */
+.certificate-number {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(108, 99, 255, 0.9);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+/* Responsive untuk Sertifikat - Versi minimalis */
+@media (max-width: 1200px) {
+    :root {
+        --certificate-width: 800px;
+        --certificate-height: 500px;
+    }
+    
+    .certificate-title h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 992px) {
+    :root {
+        --certificate-width: 700px;
+        --certificate-height: 480px;
+        --certificate-margin: 20px;
+    }
+    
+    .certificates-section {
+        width: 95%;
+    }
+    
+    .certificate-body {
+        padding: 20px;
+    }
+    
+    .certificate-title h2 {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --certificate-width: 90%;
+        --certificate-height: 450px;
+        --certificate-top-padding: 0.6em;
+    }
+    
+    .certificate-card {
+        top: 80px;
+    }
+    
+    .certificate-title h2 {
+        font-size: 1.5rem;
+    }
+    
+    .certificate-date {
+        font-size: 0.8rem;
+        padding: 4px 12px;
+    }
+    
+    .certificate-number {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+        top: 15px;
+        left: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --certificate-height: 400px;
+    }
+    
+    .certificate-body {
+        padding: 15px;
+        border-radius: 20px;
+    }
+    
+    .certificate-image {
+        border-radius: 12px;
+    }
+    
+    .certificate-title h2 {
+        font-size: 1.3rem;
+        padding: 10px 5px;
+    }
+    
+    .certificate-date {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --certificate-height: 380px;
+        --certificate-margin: 15px;
+    }
+    
+    .certificate-body {
+        padding: 12px;
+    }
+    
+    .certificate-title h2 {
+        font-size: 1.2rem;
+    }
+    
+    .certificate-number {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+/* Animasi khusus untuk sertifikat minimalis */
+@keyframes fadeInCertificate {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.certificate-card {
+    animation: fadeInCertificate 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+#certificate1 { animation-delay: 0.1s; }
+#certificate2 { animation-delay: 0.2s; }
+#certificate3 { animation-delay: 0.3s; }
+#certificate4 { animation-delay: 0.4s; }
+
+/* Scroll indicator untuk sertifikat */
+.certificate-scroll-indicator {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    gap: 12px;
+}
+
+.certificate-scroll-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.certificate-scroll-dot::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.certificate-scroll-dot:hover {
+    background-color: #6C63FF;
+    transform: scale(1.3);
+}
+
+.certificate-scroll-dot.active {
+    background-color: #6C63FF;
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(108, 99, 255, 0.5);
+}
+
+.certificate-scroll-dot.active::after {
+    border-color: #6C63FF;
+}
+/* ==================== PERBAIKAN SERTIFIKAT SECTION ==================== */
+
+/* Perbaikan untuk gambar sertifikat agar benar-benar pas */
+.certificate-image {
+    width: 100%;
+    height: 100%; /* Ubah dari 85% menjadi 100% */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    border: none; /* Hapus border agar gambar benar-benar pas */
+    position: relative;
+}
+
+.certificate-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ubah dari contain menjadi cover agar gambar mengisi penuh */
+    border-radius: 15px;
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Hapus atau modifikasi overlay yang mungkin menutupi sudut */
+.certificate-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.05) 70%, /* Perbesar transparansi di bagian atas */
+        rgba(0, 0, 0, 0.1) 100% /* Kurangi opacity di bagian bawah */
+    );
+    border-radius: 15px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Perbaikan untuk card body */
+.certificate-body {
+    box-sizing: border-box;
+    padding: 10px; /* Kurangi padding agar gambar lebih dekat ke tepi */
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+    height: var(--certificate-height);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ubah dari center ke flex-start */
+    align-items: center;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    background-color: #000000;
+    border: 3px solid rgba(108, 99, 255, 0.3);
+    position: relative;
+}
+
+/* Perbaikan untuk konten agar gambar dominan */
+.certificate-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Kurangi gap antara gambar dan judul */
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    position: relative;
+}
+
+/* Perbaikan untuk judul agar lebih minimal */
+.certificate-title {
+    width: 100%;
+    text-align: center;
+    padding: 10px 5px; /* Kurangi padding */
+    margin-top: 0; /* Hilangkan margin top */
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.7); /* Tambahkan background transparan */
+    backdrop-filter: blur(5px);
+    border-radius: 0 0 15px 15px; /* Bulatkan sudut bawah saja */
+}
+
+/* Perbaikan untuk glow border agar tidak menutupi gambar */
+.certificate-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        #6C63FF 0%, 
+        #FF6584 25%, 
+        #6C63FF 50%, 
+        #FF6584 75%, 
+        #6C63FF 100%);
+    border-radius: 25px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    background-size: 200% 200%;
+}
+
+/* Alternatif: Hapus border glow dan gunakan box-shadow saja */
+.certificate-body {
+    box-shadow: 
+        inset 0 0 0 3px rgba(108, 99, 255, 0.3),
+        0 15px 40px rgba(0, 0, 0, 0.8);
+}
+
+.certificate-body:hover {
+    box-shadow: 
+        inset 0 0 0 3px rgba(108, 99, 255, 0.8),
+        0 20px 50px rgba(108, 99, 255, 0.4);
+    transform: translateY(-10px) scale(1.02);
+}
+
+/* Perbaikan untuk responsif */
+@media (max-width: 768px) {
+    .certificate-body {
+        padding: 8px;
+    }
+    
+    .certificate-title {
+        padding: 8px 3px;
+    }
+    
+    .certificate-title h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificate-body {
+        padding: 5px;
+        border-radius: 20px;
+    }
+    
+    .certificate-image {
+        border-radius: 15px;
+    }
+    
+    .certificate-image img {
+        border-radius: 15px;
+    }
+}
+/* ==================== SERTIFIKAT HANYA GAMBAR SAJA ==================== */
+
+/* Hapus judul/title */
+.certificate-title {
+    display: none !important;
+}
+
+/* Hapus tanggal */
+.certificate-date {
+    display: none !important;
+}
+
+/* Buat gambar mengisi seluruh card */
+.certificate-image {
+    width: 100%;
+    height: 100%; /* Isi penuh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+    border: none !important; /* Hapus semua border */
+}
+
+.certificate-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Isi penuh tanpa distorsi */
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+}
+
+/* Hilangkan semua padding yang tidak perlu */
+.certificate-body {
+    padding: 0 !important; /* Hapus semua padding */
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px solid rgba(108, 99, 255, 0.3);
+    position: relative;
+}
+
+/* Buat content hanya untuk gambar */
+.certificate-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Efek hover lebih halus */
+.certificate-body:hover {
+    border-color: #6C63FF;
+    box-shadow: 0 15px 35px rgba(108, 99, 255, 0.4);
+    transform: translateY(-8px) scale(1.02);
+}
+
+.certificate-body:hover .certificate-image img {
+    transform: scale(1.05);
+}
+
+/* Perbaiki nomor sertifikat */
+.certificate-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(108, 99, 255, 0.9);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+/* Hapus semua overlay yang tidak perlu */
+.certificate-image::before,
+.certificate-image::after {
+    display: none !important;
+}
+
+.certificate-body::before {
+    display: none !important;
+}
+
+/* Responsif untuk gambar penuh */
+@media (max-width: 768px) {
+    .certificate-body {
+        border-radius: 15px;
+        border-width: 1px;
+    }
+    
+    .certificate-number {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+        top: 10px;
+        left: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificate-body {
+        border-radius: 12px;
+    }
+    
+    .certificate-image,
+    .certificate-image img {
+        border-radius: 10px;
+    }
+}
+/* ==================== SERTIFIKAT LEBIH KECIL ==================== */
+
+/* Perkecil ukuran card sertifikat */
+:root {
+    --certificate-height: 350px; /* Perkecil dari 550px */
+    --certificate-width: 600px;   /* Perkecil dari 900px */
+}
+
+/* Perkecil card body */
+.certificate-body {
+    height: var(--certificate-height);
+    width: var(--certificate-width);
+    border-radius: 15px; /* Bulatkan sedikit */
+    border: 1px solid rgba(108, 99, 255, 0.3); /* Border lebih tipis */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6); /* Shadow lebih kecil */
+}
+
+/* Hapus semua elemen teks */
+.certificate-title,
+.certificate-date {
+    display: none !important;
+}
+
+/* Gambar isi penuh tanpa celah */
+.certificate-image {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.certificate-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.4s ease;
+}
+
+/* Content minimal */
+.certificate-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* Nomor lebih kecil */
+.certificate-number {
+    top: 10px;
+    left: 10px;
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+    background: rgba(108, 99, 255, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efek hover sederhana */
+.certificate-body:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 12px 30px rgba(108, 99, 255, 0.3);
+    border-color: #6C63FF;
+}
+
+.certificate-body:hover .certificate-image img {
+    transform: scale(1.03);
+}
+
+/* Hapus semua overlay */
+.certificate-image::before,
+.certificate-image::after,
+.certificate-body::before {
+    display: none !important;
+}
+
+/* Responsif untuk ukuran kecil */
+@media (max-width: 1200px) {
+    :root {
+        --certificate-width: 500px;
+        --certificate-height: 300px;
+    }
+}
+
+@media (max-width: 992px) {
+    :root {
+        --certificate-width: 450px;
+        --certificate-height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --certificate-width: 350px;
+        --certificate-height: 220px;
+    }
+    
+    .certificate-body {
+        border-radius: 12px;
+    }
+    
+    .certificate-image,
+    .certificate-image img {
+        border-radius: 12px;
+    }
+    
+    .certificate-number {
+        width: 24px;
+        height: 24px;
+        font-size: 0.8rem;
+        top: 8px;
+        left: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --certificate-width: 300px;
+        --certificate-height: 190px;
+    }
+    
+    .certificate-body {
+        border-radius: 10px;
+    }
+    
+    .certificate-image,
+    .certificate-image img {
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    :root {
+        --certificate-width: 270px;
+        --certificate-height: 170px;
+    }
+    
+    .certificate-body {
+        border-radius: 8px;
+    }
+    
+    .certificate-image,
+    .certificate-image img {
+        border-radius: 8px;
+    }
+    
+    .certificate-number {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+        top: 5px;
+        left: 5px;
+    }
+}
+
+/* Atur jarak antar card */
+#certificate-cards {
+    gap: 15px; /* Jarak antar card lebih kecil */
+    margin-bottom: 15px;
+}
+/* ==================== ANIMATED SKILLS ICONS SECTION ==================== */
+.skills-section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.skills-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.skills-intro p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Skills Container */
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+/* Skills Rows */
+.skills-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Skill Icon Box */
+.skill-icon-box {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.skill-icon-box:hover {
+    transform: translateY(-15px) scale(1.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(108, 99, 255, 0.5);
+}
+
+/* Skill Icons */
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+.skill-icon-box:hover .skill-icon {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 20px currentColor);
+}
+
+/* Custom Icons */
+.custom-icon {
+    width: 50px;
+    height: 50px;
+}
+
+/* Microsoft Office Icon */
+.office-icon {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 8px;
+    width: 60px;
+    height: 60px;
+}
+
+.office-square {
+    width: 25px;
+    height: 25px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.office-square.word {
+    background: #2B579A;
+}
+
+.office-square.excel {
+    background: #217346;
+}
+
+.office-square.powerpoint {
+    background: #D24726;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.office-square:empty {
+    visibility: hidden;
+}
+
+.skill-icon-box:hover .office-square {
+    transform: rotate(5deg);
+}
+
+/* Glow Effect */
+.skill-glow {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        #6C63FF, #FF6584, #6C63FF);
+    border-radius: 27px;
+    z-index: 1;
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 0.4s ease;
+}
+
+.skill-icon-box:hover .skill-glow {
+    opacity: 0.6;
+    animation: glowPulse 2s infinite;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+/* Floating Animation */
+.skill-icon-box {
+    animation: float 6s ease-in-out infinite;
+}
+
+.skill-icon-box:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.skill-icon-box:nth-child(3) {
+    animation-delay: 1s;
+}
+
+.skill-icon-box:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Tooltip */
+.skill-icon-box::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-icon-box:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: -50px;
+}
+
+/* Skill Level Indicators */
+.skill-levels {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.level-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.level-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    animation: dotPulse 2s infinite;
+}
+
+.level-dot.expert {
+    background: linear-gradient(135deg, #6C63FF, #FF6584);
+    box-shadow: 0 0 15px rgba(108, 99, 255, 0.5);
+}
+
+.level-dot.advanced {
+    background: linear-gradient(135deg, #00C3FF, #00FF94);
+    box-shadow: 0 0 15px rgba(0, 195, 255, 0.5);
+}
+
+.level-dot.intermediate {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+@keyframes dotPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.3);
+        opacity: 0.8;
+    }
+}
+
+.level-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Floating Background Elements */
+.skills-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.floating-icon {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.1;
+    animation: floatAround 15s infinite linear;
+}
+
+.floating-icon:nth-child(1) {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+    animation-duration: 20s;
+}
+
+.floating-icon:nth-child(2) {
+    top: 20%;
+    right: 10%;
+    animation-delay: 3s;
+    animation-duration: 18s;
+}
+
+.floating-icon:nth-child(3) {
+    bottom: 30%;
+    left: 15%;
+    animation-delay: 6s;
+    animation-duration: 22s;
+}
+
+.floating-icon:nth-child(4) {
+    bottom: 20%;
+    right: 5%;
+    animation-delay: 9s;
+    animation-duration: 19s;
+}
+
+@keyframes floatAround {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(100px, 50px) rotate(90deg);
+    }
+    50% {
+        transform: translate(50px, 100px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-50px, 50px) rotate(270deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+/* Color-specific glows on hover */
+.skill-icon-box[data-tooltip*="HTML5"]:hover .skill-glow {
+    background: linear-gradient(45deg, #E34F26, #FF6B35);
+}
+
+.skill-icon-box[data-tooltip*="CSS3"]:hover .skill-glow {
+    background: linear-gradient(45deg, #1572B6, #1E90FF);
+}
+
+.skill-icon-box[data-tooltip*="JavaScript"]:hover .skill-glow {
+    background: linear-gradient(45deg, #F7DF1E, #FFD700);
+}
+
+.skill-icon-box[data-tooltip*="PHP"]:hover .skill-glow {
+    background: linear-gradient(45deg, #777BB4, #8892BF);
+}
+
+.skill-icon-box[data-tooltip*="MySQL"]:hover .skill-glow {
+    background: linear-gradient(45deg, #00758F, #007DBA);
+}
+
+.skill-icon-box[data-tooltip*="GitHub"]:hover .skill-glow {
+    background: linear-gradient(45deg, #181717, #333333);
+}
+
+.skill-icon-box[data-tooltip*="Canva"]:hover .skill-glow {
+    background: linear-gradient(45deg, #00C4CC, #00D4FF);
+}
+
+.skill-icon-box[data-tooltip*="Microsoft Office"]:hover .skill-glow {
+    background: linear-gradient(45deg, #D83B01, #F25022);
+}
+
+.skill-icon-box[data-tooltip*="CapCut"]:hover .skill-glow {
+    background: linear-gradient(45deg, #00C3FF, #00FF94);
+}
+
+.skill-icon-box[data-tooltip*="Filmora"]:hover .skill-glow {
+    background: linear-gradient(45deg, #FF4081, #FF6B9D);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .skills-row {
+        gap: 30px;
+    }
+    
+    .skill-icon-box {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 992px) {
+    .skills-row {
+        gap: 25px;
+    }
+    
+    .skill-icon-box {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .skill-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .custom-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .office-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .office-square {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 60px 0;
+    }
+    
+    .skills-row {
+        gap: 20px;
+    }
+    
+    .skill-icon-box {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .skill-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .custom-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .skills-intro p {
+        font-size: 1.1rem;
+    }
+    
+    .skill-icon-box::after {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+        bottom: -35px;
+    }
+    
+    .level-indicator {
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .skills-row {
+        gap: 15px;
+    }
+    
+    .skill-icon-box {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .skill-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .custom-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .office-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .office-square {
+        width: 18px;
+        height: 18px;
+        font-size: 0.6rem;
+    }
+    
+    .skill-levels {
+        gap: 15px;
+    }
+    
+    .level-indicator {
+        padding: 6px 12px;
+    }
+    
+    .level-text {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-row {
+        gap: 10px;
+    }
+    
+    .skill-icon-box {
+        width: 70px;
+        height: 70px;
+        border-radius: 20px;
+    }
+    
+    .skill-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .custom-icon {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .office-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .office-square {
+        width: 16px;
+        height: 16px;
+        font-size: 0.5rem;
+    }
+    
+    .skills-intro p {
+        font-size: 1rem;
+    }
+}
