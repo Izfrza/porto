@@ -1224,82 +1224,65 @@
                 <p>Isi form di bawah, saya akan membalas secepatnya! ⚡</p>
             </div>
             
-            <form action="https://formsubmit.co/izafaroza0@gmail.com" method="POST" id="contactForm">
-                <!-- FormSubmit Configuration -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://izafaroza.vercel.app/thankyou.html">
-                <input type="hidden" name="_subject" value="✨ Pesan Baru dari Portfolio Website! - Iza Faroza">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_autoresponse" value="Terima kasih telah menghubungi saya! Pesan Anda akan segera saya baca dan balas secepatnya. 🙏">
-                <input type="hidden" name="_replyto" value="email">
-                
-                <!-- Name Field -->
-                <div class="form-group">
-                    <label for="name">
-                        <i class='bx bxs-user'></i>
-                        Nama Lengkap
-                    </label>
-                    <input 
-                        type="text" 
-                        name="name" 
-                        id="name" 
-                        placeholder="Masukkan nama lengkap Anda" 
-                        required
-                    >
-                </div>
+          <form id="contactForm" onsubmit="sendToWhatsApp(event)">
+    <div class="form-group">
+        <label for="name">Nama Lengkap</label>
+        <input type="text" id="name" placeholder="Masukkan nama Anda" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Masukkan email Anda" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="subject">Subjek</label>
+        <select id="subject" required>
+            <option value="" disabled selected>Pilih subjek pesan</option>
+            <option value="Proyek Website">💻 Proyek Website</option>
+            <option value="Sistem Informasi">📊 Sistem Informasi</option>
+            <option value="Kolaborasi">🎓 Kolaborasi</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="message">Pesan</label>
+        <textarea id="message" rows="5" placeholder="Tulis pesan Anda..." required></textarea>
+    </div>
+    
+    <button type="submit" class="submit-btn">
+        <span>Kirim Pesan ke WhatsApp</span>
+        <i class='bx bxl-whatsapp'></i>
+    </button>
+</form>
 
-                <!-- Email Field -->
-                <div class="form-group">
-                    <label for="email">
-                        <i class='bx bxs-envelope'></i>
-                        Email
-                    </label>
-                    <input 
-                        type="email" 
-                        name="email" 
-                        id="email" 
-                        placeholder="Masukkan email aktif Anda" 
-                        required
-                    >
-                </div>
-
-                <!-- Subject Field -->
-                <div class="form-group">
-                    <label for="subject">
-                        <i class='bx bxs-tag'></i>
-                        Subjek
-                    </label>
-                    <select name="subject" id="subject" required>
-                        <option value="" disabled selected>Pilih subjek pesan</option>
-                        <option value="Proyek Website">💻 Proyek Website</option>
-                        <option value="Sistem Informasi">📊 Sistem Informasi</option>
-                        <option value="Kolaborasi Pendidikan">🎓 Kolaborasi Pendidikan</option>
-                        <option value="Freelance">✨ Freelance</option>
-                        <option value="Lainnya">📝 Lainnya</option>
-                    </select>
-                </div>
-
-                <!-- Message Field -->
-                <div class="form-group">
-                    <label for="message">
-                        <i class='bx bxs-message'></i>
-                        Pesan
-                    </label>
-                    <textarea 
-                        name="message" 
-                        id="message" 
-                        rows="5" 
-                        placeholder="Tulis pesan Anda di sini..." 
-                        required
-                    ></textarea>
-                </div>
-
-                <!-- Submit Button -->
-                <button type="submit" class="submit-btn" id="submitBtn">
-                    <span>Kirim Pesan</span>
-                    <i class='bx bx-mail-send'></i>
-                </button>
-            </form>
+<script>
+function sendToWhatsApp(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    // Format pesan untuk WhatsApp
+    const text = `Halo Iza Faroza!%0A%0A
+👤 *Nama:* ${name}%0A
+📧 *Email:* ${email}%0A
+📋 *Subjek:* ${subject}%0A
+💬 *Pesan:*%0A${message}%0A%0A
+_Dikirim dari Portfolio Website_`;
+    
+    // Nomor WhatsApp Anda
+    const phoneNumber = "62895402357182";
+    
+    // Redirect ke WhatsApp
+    window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
+    
+    // Tampilkan notifikasi sukses
+    alert('✅ Anda akan diarahkan ke WhatsApp untuk mengirim pesan.');
+}
+</script>
         </div>
     </div>
 </section>
