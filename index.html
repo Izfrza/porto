@@ -354,7 +354,27 @@
             </div>            
         </header>
         
-        
+        <div class="sidebar">
+            <div class="close-icon">
+                <i class='bx bx-x'></i>
+            </div>
+            
+            <ul>
+               
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#social">Social Media</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="social-sidebar">
+                <a href="https://www.instagram.com/izfrza?igsh=MWdxNzlpZ3VmcmhjYw==" target="_blank"><i class='bx bxl-instagram'></i></a>
+                <a href="https://github.com/Izfrza" target="_blank"><i class='bx bxl-github'></i></a>
+                <a href="https://www.tiktok.com/@zaaaaa.izfrza?_r=1&_t=ZS-93QJ8oEEAse" target="_blank"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.linkedin.com/in/iza-faroza-7745b2360" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
+            </div>
+        </div>
 
         <div class="blackhole-box" data-aos="fade-down" data-aos-duration="2000">
             <video autoplay loop muted plays-inline src="videos/blackhole.mp4"></video>
@@ -1186,7 +1206,7 @@
             </div>
             
             <div class="contact-social">
-                <h4><i class='bx bx-heart'></i> Follow Saya</h4>
+                <h4>Follow Saya</h4>
                 <div class="contact-social-icons">
                     <a href="https://www.instagram.com/izfrza" target="_blank"><i class='bx bxl-instagram'></i></a>
                     <a href="https://github.com/Izfrza" target="_blank"><i class='bx bxl-github'></i></a>
@@ -1197,14 +1217,22 @@
             </div>
         </div>
 
-        <!-- Right Side - Contact Form (PAKAI WHATSAPP - 100% WORK) -->
+        <!-- Right Side - Contact Form -->
         <div class="contact-form-box autoBlur" data-aos="fade-left">
             <div class="form-header">
                 <h2>Kirim Pesan</h2>
-                <p>Isi form di bawah, saya akan merespon via WhatsApp! ⚡</p>
+                <p>Isi form di bawah, saya akan membalas secepatnya! ⚡</p>
             </div>
             
-            <form id="whatsappForm" onsubmit="sendToWhatsApp(event)">
+            <form action="https://formsubmit.co/izafaroza0@gmail.com" method="POST" id="contactForm">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://izafaroza.vercel.app/thankyou.html">
+                <input type="hidden" name="_subject" value="✨ Pesan Baru dari Portfolio Website! - Iza Faroza">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_autoresponse" value="Terima kasih telah menghubungi saya! Pesan Anda akan segera saya baca dan balas secepatnya. 🙏">
+                <input type="hidden" name="_replyto" value="email">
+                
                 <!-- Name Field -->
                 <div class="form-group">
                     <label for="name">
@@ -1268,40 +1296,10 @@
 
                 <!-- Submit Button -->
                 <button type="submit" class="submit-btn" id="submitBtn">
-                    <span>Kirim via WhatsApp</span>
-                    <i class='bx bxl-whatsapp'></i>
+                    <span>Kirim Pesan</span>
+                    <i class='bx bx-mail-send'></i>
                 </button>
             </form>
-        </div>
-    </div>
-</section>
-<script>
-function sendToWhatsApp(event) {
-    event.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    
-    // Format pesan untuk WhatsApp
-    const text = `Halo Iza Faroza!%0A%0A
-👤 *Nama:* ${name}%0A
-📧 *Email:* ${email}%0A
-📋 *Subjek:* ${subject}%0A
-💬 *Pesan:*%0A${message}%0A%0A
-_Dikirim dari Portfolio Website_`;
-    
-    // Nomor WhatsApp Anda
-    const phoneNumber = "62895402357182";
-    
-    // Redirect ke WhatsApp
-    window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
-    
-    // Tampilkan notifikasi sukses
-    alert('✅ Anda akan diarahkan ke WhatsApp untuk mengirim pesan.');
-}
-</script>
         </div>
     </div>
 </section>
@@ -1521,84 +1519,6 @@ _Dikirim dari Portfolio Website_`;
             });
         });
     </script>
-    <script>
-// Fungsi untuk kirim ke WhatsApp
-function sendToWhatsApp(event) {
-    event.preventDefault();
     
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    
-    // Validasi
-    if (!name || !email || !subject || !message) {
-        alert('⚠️ Harap isi semua field!');
-        return;
-    }
-    
-    // Validasi email sederhana
-    if (!email.includes('@') || !email.includes('.')) {
-        alert('⚠️ Masukkan email yang valid!');
-        return;
-    }
-    
-    // Animasi button loading
-    const btn = document.getElementById('submitBtn');
-    const originalText = btn.innerHTML;
-    btn.innerHTML = '<span>Mengirim...</span> <i class="bx bx-loader-alt bx-spin"></i>';
-    btn.disabled = true;
-    
-    // Format pesan untuk WhatsApp
-    const text = `Halo Iza Faroza!%0A%0A` +
-                 `👤 *Nama:* ${name}%0A` +
-                 `📧 *Email:* ${email}%0A` +
-                 `📋 *Subjek:* ${subject}%0A` +
-                 `💬 *Pesan:*%0A${message}%0A%0A` +
-                 `_✉️ Dikirim dari Portfolio Website_`;
-    
-    // Nomor WhatsApp Anda
-    const phoneNumber = "62895402357182";
-    
-    // Buka WhatsApp dengan delay
-    setTimeout(() => {
-        window.open(`https://wa.me/${phoneNumber}?text=${text}`, '_blank');
-        
-        // Kembalikan button ke normal
-        btn.innerHTML = originalText;
-        btn.disabled = false;
-        
-        // Reset form
-        document.getElementById('whatsappForm').reset();
-        
-        // Notifikasi sukses
-        alert('✅ Berhasil! Anda akan diarahkan ke WhatsApp.');
-    }, 500);
-}
-
-// Fix untuk mobile - prevent zoom on focus
-document.addEventListener('DOMContentLoaded', function() {
-    const inputs = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea');
-    inputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            this.style.fontSize = '16px';
-        });
-    });
-});
-
-// Smooth scroll untuk anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-</script>
 </body>
 </html>
