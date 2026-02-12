@@ -3621,3 +3621,583 @@ header ul a:hover{
 .form-group textarea::-webkit-scrollbar-thumb:hover {
     background: #6C63FF;
 }
+
+/* ==================== FINAL FIX - CONTACT SECTION SUPER RESPONSIVE ==================== */
+
+/* Fix container utama */
+.contact-section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 30px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Fix box padding */
+.contact-info-box,
+.contact-form-box {
+    padding: 35px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Fix form elements */
+.form-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 14px 18px;
+}
+
+/* Fix submit button */
+.submit-btn {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ========== RESPONSIVE BREAKPOINTS SEMPURNA ========== */
+
+/* Laptop Kecil / 1024px - 1366px */
+@media screen and (max-width: 1200px) {
+    .contact-section {
+        padding: 40px 30px;
+    }
+    
+    .contact-container {
+        gap: 25px;
+    }
+    
+    .contact-info-box,
+    .contact-form-box {
+        padding: 30px;
+    }
+    
+    .contact-info-header h2,
+    .form-header h2 {
+        font-size: 1.8rem;
+    }
+    
+    .contact-icon-big {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .contact-icon-big i {
+        font-size: 35px;
+    }
+}
+
+/* Tablet Landscape / 768px - 1024px */
+@media screen and (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .contact-section .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+    }
+    
+    .contact-info-box,
+    .contact-form-box {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    .contact-detail-item {
+        padding: 15px 20px;
+    }
+}
+
+/* Tablet Portrait / 600px - 768px */
+@media screen and (max-width: 768px) {
+    .contact-section {
+        padding: 30px 20px;
+        margin: 40px auto;
+    }
+    
+    .contact-section .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+    }
+    
+    .contact-info-box,
+    .contact-form-box {
+        padding: 25px;
+        border-radius: 25px;
+    }
+    
+    .contact-info-header {
+        margin-bottom: 25px;
+    }
+    
+    .contact-info-header h2,
+    .form-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-info-header p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .contact-icon-big {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+    }
+    
+    .contact-icon-big i {
+        font-size: 30px;
+    }
+    
+    .contact-detail-item {
+        padding: 12px 15px;
+        gap: 12px;
+    }
+    
+    .contact-detail-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .contact-detail-icon i {
+        font-size: 20px;
+    }
+    
+    .contact-detail-info h4 {
+        font-size: 0.85rem;
+    }
+    
+    .contact-detail-info a,
+    .contact-detail-info p {
+        font-size: 0.95rem;
+    }
+    
+    .contact-social-icons {
+        gap: 10px;
+    }
+    
+    .contact-social-icons a {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+    
+    /* Form adjustments */
+    .form-group {
+        margin-bottom: 18px;
+    }
+    
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 16px;
+        font-size: 0.95rem;
+        border-radius: 12px;
+    }
+    
+    .form-group textarea {
+        min-height: 100px;
+    }
+    
+    .submit-btn {
+        padding: 14px 25px;
+        font-size: 1rem;
+    }
+}
+
+/* Mobile Large / 425px - 600px */
+@media screen and (max-width: 600px) {
+    .contact-section {
+        padding: 25px 15px;
+    }
+    
+    .contact-section .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+    }
+    
+    .contact-info-box,
+    .contact-form-box {
+        padding: 20px;
+        border-radius: 20px;
+    }
+    
+    .contact-info-header h2,
+    .form-header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .contact-info-header p {
+        font-size: 0.9rem;
+    }
+    
+    .contact-icon-big {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .contact-icon-big i {
+        font-size: 28px;
+    }
+    
+    .contact-details {
+        margin-bottom: 25px;
+    }
+    
+    .contact-detail-item {
+        flex-direction: row;
+        padding: 12px;
+    }
+    
+    .contact-detail-icon {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .contact-detail-info a,
+    .contact-detail-info p {
+        font-size: 0.9rem;
+    }
+    
+    .contact-social h4 {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    .contact-social-icons a {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 11px 14px;
+        font-size: 0.9rem;
+    }
+    
+    .submit-btn {
+        padding: 12px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .submit-btn i {
+        font-size: 20px;
+    }
+}
+
+/* Mobile Medium / 375px - 425px */
+@media screen and (max-width: 425px) {
+    .contact-section {
+        padding: 20px 12px;
+    }
+    
+    .contact-section .section-title {
+        font-size: 1.4rem;
+    }
+    
+    .contact-info-box,
+    .contact-form-box {
+        padding: 18px;
+    }
+    
+    .contact-info-header h2,
+    .form-header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .contact-info-header p {
+        font-size: 0.85rem;
+    }
+    
+    .contact-icon-big {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .contact-icon-big i {
+        font-size: 24px;
+    }
+    
+    .contact-detail-item {
+        padding: 10px;
+    }
+    
+    .contact-detail-icon {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .contact-detail-icon i {
+        font-size: 18px;
+    }
+    
+    .contact-detail-info h4 {
+        font-size: 0.8rem;
+    }
+    
+    .contact-detail-info a,
+    .contact-detail-info p {
+        font-size: 0.85rem;
+    }
+    
+    .contact-social-icons a {
+        width: 34px;
+        height: 34px;
+        font-size: 17px;
+    }
+    
+    .form-group label {
+        font-size: 0.85rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+    
+    .submit-btn {
+        padding: 11px 18px;
+        font-size: 0.9rem;
+    }
+    
+    .submit-btn i {
+        font-size: 18px;
+    }
+}
+
+/* Mobile Small / 320px - 375px */
+@media screen and (max-width: 375px) {
+    .contact-section {
+        padding: 15px 10px;
+    }
+    
+    .contact-section .section-title {
+        font-size: 1.3rem;
+    }
+    
+    .contact-info-box,
+    .contact-form-box {
+        padding: 15px;
+        border-radius: 18px;
+    }
+    
+    .contact-info-header h2,
+    .form-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .contact-info-header p {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+    
+    .contact-icon-big {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .contact-icon-big i {
+        font-size: 22px;
+    }
+    
+    .contact-detail-item {
+        padding: 8px;
+    }
+    
+    .contact-detail-icon {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .contact-detail-icon i {
+        font-size: 16px;
+    }
+    
+    .contact-detail-info a,
+    .contact-detail-info p {
+        font-size: 0.8rem;
+    }
+    
+    .contact-social-icons a {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 9px 12px;
+        font-size: 0.8rem;
+        border-radius: 10px;
+    }
+    
+    .form-group textarea {
+        min-height: 90px;
+    }
+    
+    .submit-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+    
+    .submit-btn i {
+        font-size: 17px;
+    }
+}
+
+/* iPhone 5/SE / 320px */
+@media screen and (max-width: 320px) {
+    .contact-section .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .contact-info-box,
+    .contact-form-box {
+        padding: 12px;
+    }
+    
+    .contact-detail-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-detail-icon {
+        margin-bottom: 5px;
+    }
+    
+    .contact-social-icons {
+        justify-content: center;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 8px 10px;
+    }
+}
+
+/* Fix untuk iOS - Mencegah zoom otomatis */
+@supports (-webkit-touch-callout: none) {
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* Landscape mode untuk HP */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .contact-section {
+        padding: 20px;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    .contact-info-box,
+    .contact-form-box {
+        padding: 20px;
+    }
+    
+    .contact-icon-big {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .contact-icon-big i {
+        font-size: 22px;
+    }
+    
+    .contact-detail-item {
+        padding: 8px 12px;
+    }
+    
+    .form-group {
+        margin-bottom: 12px;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 8px 12px;
+    }
+    
+    .form-group textarea {
+        min-height: 70px;
+    }
+}
+
+/* Fix untuk tablet landscape mode */
+@media screen and (min-width: 1024px) and (max-height: 768px) and (orientation: landscape) {
+    .contact-section {
+        padding: 30px;
+    }
+    
+    .contact-info-box,
+    .contact-form-box {
+        padding: 30px;
+    }
+}
+
+/* Animasi yang lebih smooth di mobile */
+@media (prefers-reduced-motion: reduce) {
+    .contact-info-box,
+    .contact-form-box,
+    .contact-detail-item,
+    .contact-social-icons a,
+    .submit-btn {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Fix untuk sticky hover di mobile */
+@media (hover: none) and (pointer: coarse) {
+    .contact-detail-item:hover,
+    .contact-social-icons a:hover,
+    .submit-btn:hover {
+        transform: none;
+        background: none;
+    }
+    
+    .contact-detail-item:active,
+    .contact-social-icons a:active,
+    .submit-btn:active {
+        opacity: 0.8;
+    }
+}
