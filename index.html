@@ -1138,17 +1138,15 @@
         </section>
 
 <section class="contact-section" id="contact">
-    
-
     <div class="contact-container">
         <!-- Left Side - Contact Info -->
         <div class="contact-info-box autoBlur" data-aos="fade-right">
             <div class="contact-info-header">
                 <div class="contact-icon-big">
-                    <i class='bx bx-chat'></i>
+                    <i class='bx bxl-whatsapp'></i>
                 </div>
                 <h2>Mari Berkolaborasi! 🤝</h2>
-                <p>Apakah Anda ingin membangun website, mengembangkan sistem informasi, atau berkolaborasi dalam proyek pendidikan? Saya siap membantu mewujudkan ide Anda menjadi kenyataan!</p>
+                <p>Apakah Anda ingin membangun website, mengembangkan sistem informasi, atau berkolaborasi dalam proyek pendidikan? Kirim pesan langsung ke WhatsApp saya!</p>
             </div>
             
             <div class="contact-details">
@@ -1185,63 +1183,53 @@
             
             <div class="contact-social">
                 <h6></h6>
-                
             </div>
         </div>
 
-        <!-- Right Side - Contact Form -->
+        <!-- Right Side - WhatsApp Form -->
         <div class="contact-form-box autoBlur" data-aos="fade-left">
             <div class="form-header">
-                <h2>Kirim Pesan</h2>
-                <p>Isi form di bawah, saya akan membalas secepatnya! ⚡</p>
+                <h2>Kirim Pesan WhatsApp</h2>
+                <p>Isi form di bawah, pesan akan langsung terkirim ke WhatsApp saya! ⚡</p>
             </div>
             
-            <form action="https://formsubmit.co/izafaroza0@gmail.com" method="POST" id="contactForm">
-                <!-- FormSubmit Configuration -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://izafaroza.vercel.app/thankyou.html">
-                <input type="hidden" name="_subject" value="✨ Pesan Baru dari Portfolio Website! - Iza Faroza">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_autoresponse" value="Terima kasih telah menghubungi saya! Pesan Anda akan segera saya baca dan balas secepatnya. 🙏">
-                <input type="hidden" name="_replyto" value="email">
-                
+            <form id="whatsappContactForm" class="whatsapp-form">
                 <!-- Name Field -->
                 <div class="form-group">
-                    <label for="name">
+                    <label for="wa_nama_input">
                         <i class='bx bxs-user'></i>
                         Nama Lengkap
                     </label>
                     <input 
                         type="text" 
-                        name="name" 
-                        id="name" 
+                        id="wa_nama_input" 
+                        name="nama" 
                         placeholder="Masukkan nama lengkap Anda" 
                         required
                     >
                 </div>
 
-                <!-- Email Field -->
+                <!-- Phone Field (Optional) -->
                 <div class="form-group">
-                    <label for="email">
-                        <i class='bx bxs-envelope'></i>
-                        Email
+                    <label for="wa_phone_input">
+                        <i class='bx bxl-whatsapp'></i>
+                        No. WhatsApp (Opsional)
                     </label>
                     <input 
-                        type="email" 
-                        name="email" 
-                        id="email" 
-                        placeholder="Masukkan email aktif Anda" 
-                        required
+                        type="tel" 
+                        id="wa_phone_input" 
+                        name="phone" 
+                        placeholder="Contoh: 08123456789 atau 628123456789"
                     >
                 </div>
 
                 <!-- Subject Field -->
                 <div class="form-group">
-                    <label for="subject">
+                    <label for="wa_subject_select">
                         <i class='bx bxs-tag'></i>
                         Subjek
                     </label>
-                    <select name="subject" id="subject" required>
+                    <select name="subject" id="wa_subject_select" required>
                         <option value="" disabled selected>Pilih subjek pesan</option>
                         <option value="Proyek Website">💻 Proyek Website</option>
                         <option value="Sistem Informasi">📊 Sistem Informasi</option>
@@ -1253,13 +1241,13 @@
 
                 <!-- Message Field -->
                 <div class="form-group">
-                    <label for="message">
+                    <label for="wa_message_textarea">
                         <i class='bx bxs-message'></i>
                         Pesan
                     </label>
                     <textarea 
+                        id="wa_message_textarea" 
                         name="message" 
-                        id="message" 
                         rows="5" 
                         placeholder="Tulis pesan Anda di sini..." 
                         required
@@ -1267,15 +1255,14 @@
                 </div>
 
                 <!-- Submit Button -->
-                <button type="submit" class="submit-btn" id="submitBtn">
-                    <span>Kirim Pesan</span>
-                    <i class='bx bx-mail-send'></i>
+                <button type="submit" class="submit-btn" id="wa_send_btn">
+                    <span>Kirim ke WhatsApp</span>
+                    <i class='bx bxl-whatsapp'></i>
                 </button>
             </form>
         </div>
     </div>
 </section>
-
         <section class="footer">
             <h1>©️2025, Dibuat oleh Iza Faroza</h1>
             <div class="box-icons">
@@ -1490,7 +1477,7 @@
             });
         });
     </script>
-    
+    <!-- WhatsApp Form Handler -->
+<script src="app.js"></script>
 </body>
 </html>
-
